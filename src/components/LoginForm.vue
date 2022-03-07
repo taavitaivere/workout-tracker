@@ -16,22 +16,6 @@
           label="E-mail"
           required
         ></v-text-field>
-
-        <v-select
-          v-model="select"
-          :items="items"
-          :rules="[(v) => !!v || 'Item is required']"
-          label="Item"
-          required
-        ></v-select>
-
-        <v-checkbox
-          v-model="checkbox"
-          :rules="[(v) => !!v || 'You must agree to continue!']"
-          label="Do you agree?"
-          required
-        ></v-checkbox>
-
         <v-btn
           :disabled="!valid"
           color="success"
@@ -66,9 +50,6 @@ export default {
       (v) => !!v || "E-mail is required",
       (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
     ],
-    select: null,
-    items: ["Item 1", "Item 2", "Item 3", "Item 4"],
-    checkbox: false,
   }),
 
   methods: {
